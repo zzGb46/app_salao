@@ -1,24 +1,42 @@
 <?php
 require 'config/config.php';
-if(isset($_POST['usuario'], $_POST['senha'], $_POST['nome'])) {
+session_start();
+if(isset(
+ $_POST['usuario'],
+ $_POST['senha'],
+ $_POST['nome'],
+ $_POST['telefone'],
+ $_POST['nascimento']
+ )) {
 
 
-    $user = $_POST['usuario'];
+    $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
     $nome = $_POST['nome'];
+    $telefone = $_POST['telefone'];
+    $nascimento = $_POST['nascimento'];
 
 
 
-    $query = "INSERT INTO tb_user(usuario, senha, nome)
+    $query = "INSERT INTO tb_user(
+    usuario,
+     senha,
+      nome,
+      telefone,
+      nascimento)
     values(
     :usuario,
     :senha,
-    :nome);";
+    :nome,
+    :telefone,
+    :nascimento);";
 
     $resultado = $pdo->prepare($query);
-    $resultado->bindParam(':usuario', $user);
+    $resultado->bindParam(':usuario', $usuario);
     $resultado->bindParam(':senha', $senha);
     $resultado->bindParam(':nome', $nome);
+    $resultado->bindParam(':telefone', $telefone);
+    $resultado->bindParam(':nascimento', $nascimento);
     $sucesso=$resultado->execute();
 
 
@@ -27,6 +45,8 @@ if(isset($_POST['usuario'], $_POST['senha'], $_POST['nome'])) {
       echo "Erro ao cadastrar: " . $errorInfo[2];
     } else {
         echo 'Usuario cadastrado com sucesso😎';
+        $_SESSION['telefone'] = $telefone;
+        $_SESSION['nascimento'] = $nascimento;
     }
 }
 ?>
@@ -53,6 +73,8 @@ if(isset($_POST['usuario'], $_POST['senha'], $_POST['nome'])) {
       <input type="text" placeholder="Nome completo" name="nome" required />
       <input type="email" placeholder="E-mail" name="usuario" required />
       <input type="password" placeholder="Senha" name="senha" required />
+      <input type="text" placeholder="telefone" name="telefone" required />
+      <input type="date" placeholder="nascimento" name="nascimento" required />
       <button type="submit" class="primary">Cadastrar</button>
     </form>
 

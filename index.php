@@ -7,6 +7,7 @@ if(isset($_GET['usuario'], $_GET['senha'])){
 $usuario = $_GET['usuario'];
 $senha = $_GET['senha'];
 
+
 require 'app/model/model.php';
 
 if(verificarUsuario($usuario, $senha)){

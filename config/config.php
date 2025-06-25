@@ -13,6 +13,8 @@ $db ='';
 $pdo = new PDO("mysql:dbname=$db;host=$host", "$user", "$pass");
 // $mysqli = new mysqli($host, $user, $pass, $db);
 
+$teste = "eai";
+
 
 // function foi2(){
 //     global $pdo;

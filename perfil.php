@@ -1,3 +1,9 @@
+<?php 
+require 'config/config.php';
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -24,12 +30,12 @@
   <nav class="menu-lateral" id="menuLateral">
     <div class="overlay" id="overlay"></div>
     <ul>
-      <li><a href="perfil.php"><span>👤</span> Perfil do usuário</a></li>
-      <li><a href="editar-perfil.php"><span>🛠</span> Editar Perfil</a></li>
-      <li><a href="depoimentos.php"><span>💬</span> Depoimentos</a></li>
-      <li><a href="pagamentos.php"><span>💳</span> Pagamentos</a></li>
-      <li><a href="contatos.php"><span>💻</span> Contatos</a></li>
-      <li><a href="index.php"><span>⏻</span> Sair</a></li>
+      <li><a href="pefil.html"><span>👤</span> Perfil do usuário</a></li>
+      <li><a href="editar-perfil.html"><span>🛠</span> Editar Perfil</a></li>
+      <li><a href="depoimentos.html"><span>💬</span> Depoimentos</a></li>
+      <li><a href="pagamentos.html"><span>💳</span> Pagamentos</a></li>
+      <li><a href="contatos.html"><span>💻</span> Contatos</a></li>
+      <li><a href="index.html"><span>⏻</span> Sair</a></li>
     </ul>
   </nav>
 
@@ -39,10 +45,10 @@
 
       <img src="img/banner-sobre.png" alt="Foto do Usuário" class="profile-picture" />
      
-      <p> <a href="editar-perfil.html">
+      <p> <a href="editar_perfil.php">
           Editar Perfil
         </a></p>
-      <p><strong>Nome:</strong> Usuário Exemplo</p>
+      <p><strong>Nome:</strong></p>
       <p><strong>E-mail:</strong> usuario@exemplo.com</p>
       <p><strong>Telefone:</strong> usuario@exemplo.com</p>
       <p><strong>Data de nascimento </strong> usuario@exemplo.com</p>
