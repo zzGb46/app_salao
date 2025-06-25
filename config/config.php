@@ -5,10 +5,10 @@
 // define("mensagem", "http://localhost/login_projeto/mailer/formulario.php");
 
 // define("agendamento", "http://localhost/login_projeto/agendamento.php");
-$host ='smpsistema.com.br';
-$user = 'u283879542_gabriel_m';
-$pass= 'Gabriel_m@tipi02';
-$db ='u283879542_gabriel_m';
+$host ='';
+$user = '';
+$pass= '';
+$db ='';
 
 $pdo = new PDO("mysql:dbname=$db;host=$host", "$user", "$pass");
 // $mysqli = new mysqli($host, $user, $pass, $db);
